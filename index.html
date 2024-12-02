@@ -11,7 +11,6 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
     }
 
     header {
@@ -28,7 +27,7 @@
     }
 
     main {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 20px auto;
       padding: 0 20px;
     }
@@ -39,23 +38,18 @@
       margin-bottom: 40px;
     }
 
-    th, td {
-      padding: 15px;
+    table th, table td {
+      padding: 10px;
       text-align: center;
       border: 1px solid #444;
     }
 
-    th {
+    table th {
       background-color: #1e1e1e;
       color: #f05454;
     }
 
-    td {
-      background-color: #1e1e1e;
-    }
-
-    img,
-    canvas {
+    table td img, table td canvas {
       max-width: 100px;
       border: 1px solid #444;
       border-radius: 8px;
@@ -65,7 +59,7 @@
       background-color: #f05454;
       color: #ffffff;
       border: none;
-      padding: 10px 20px;
+      padding: 8px 16px;
       font-size: 0.9rem;
       border-radius: 5px;
       cursor: pointer;
@@ -73,19 +67,6 @@
 
     button:hover {
       background-color: #d94b4b;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #1e1e1e;
-      border-top: 1px solid #333;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #aaa;
     }
   </style>
 </head>
@@ -97,76 +78,97 @@
     <table>
       <thead>
         <tr>
-          <th>Image Format</th>
-          <th>Local Image</th>
+          <th>Format</th>
+          <th>Image</th>
           <th>Canvas</th>
-          <th>Convert and Save</th>
-          <th>Crossorigin Image</th>
+          <th>Convert & Save</th>
+          <th>Cross-Origin Image</th>
+          <th>Convert & Save (Cross-Origin)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>WebP</td>
-          <td><img src="images/image.webp" alt="WebP"></td>
+          <td><img src="images/image.webp" alt="WebP Image"></td>
           <td><canvas></canvas></td>
-          <td><button>Download as PNG</button></td>
-          <td><img src="" crossorigin="anonymous" alt="Crossorigin WebP"></td>
+          <td><button>Save as PNG</button></td>
+          <td><img crossorigin="anonymous" src="" alt="Cross-Origin WebP"></td>
+          <td><button>Save as PNG</button></td>
         </tr>
         <tr>
           <td>AVIF</td>
-          <td><img src="images/image.avif" alt="AVIF"></td>
+          <td><img src="images/image.avif" alt="AVIF Image"></td>
           <td><canvas></canvas></td>
-          <td><button>Download as PNG</button></td>
-          <td><img src="" crossorigin="anonymous" alt="Crossorigin AVIF"></td>
+          <td><button>Save as PNG</button></td>
+          <td><img crossorigin="anonymous" src="" alt="Cross-Origin AVIF"></td>
+          <td><button>Save as PNG</button></td>
         </tr>
         <tr>
           <td>JPEG</td>
-          <td><img src="images/image.jpg" alt="JPEG"></td>
+          <td><img src="images/image.jpg" alt="JPEG Image"></td>
           <td><canvas></canvas></td>
-          <td><button>Download as PNG</button></td>
-          <td><img src="" crossorigin="anonymous" alt="Crossorigin JPEG"></td>
+          <td><button>Save as PNG</button></td>
+          <td><img crossorigin="anonymous" src="" alt="Cross-Origin JPEG"></td>
+          <td><button>Save as PNG</button></td>
         </tr>
         <tr>
           <td>PNG</td>
-          <td><img src="images/image.png" alt="PNG"></td>
+          <td><img src="images/image.png" alt="PNG Image"></td>
           <td><canvas></canvas></td>
-          <td><button>Download as PNG</button></td>
-          <td><img src="" crossorigin="anonymous" alt="Crossorigin PNG"></td>
+          <td><button>Save as PNG</button></td>
+          <td><img crossorigin="anonymous" src="" alt="Cross-Origin PNG"></td>
+          <td><button>Save as PNG</button></td>
         </tr>
         <tr>
           <td>SVG</td>
-          <td><img src="images/image.svg" alt="SVG"></td>
+          <td><img src="images/image.svg" alt="SVG Image"></td>
           <td><canvas></canvas></td>
-          <td><button>Download as PNG</button></td>
-          <td><img src="" crossorigin="anonymous" alt="Crossorigin SVG"></td>
+          <td><button>Save as PNG</button></td>
+          <td><img crossorigin="anonymous" src="" alt="Cross-Origin SVG"></td>
+          <td><button>Save as PNG</button></td>
         </tr>
         <tr>
           <td>APNG</td>
-          <td><img src="images/image.apng" alt="APNG"></td>
+          <td><img src="images/image.apng" alt="APNG Image"></td>
           <td><canvas></canvas></td>
-          <td><button>Download as PNG</button></td>
-          <td><img src="" crossorigin="anonymous" alt="Crossorigin APNG"></td>
+          <td><button>Save as PNG</button></td>
+          <td><img crossorigin="anonymous" src="" alt="Cross-Origin APNG"></td>
+          <td><button>Save as PNG</button></td>
         </tr>
         <tr>
           <td>GIF</td>
-          <td><img src="images/image.gif" alt="GIF"></td>
+          <td><img src="images/image.gif" alt="GIF Image"></td>
           <td><canvas></canvas></td>
-          <td><button>Download as PNG</button></td>
-          <td><img src="" crossorigin="anonymous" alt="Crossorigin GIF"></td>
+          <td><button>Save as PNG</button></td>
+          <td><img crossorigin="anonymous" src="" alt="Cross-Origin GIF"></td>
+          <td><button>Save as PNG</button></td>
         </tr>
       </tbody>
     </table>
   </main>
-  <footer>
-    <p>&copy; 2024 Image Format Showcase. All rights reserved.</p>
-  </footer>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('table tbody tr').forEach(row => {
+      document.querySelectorAll('tbody tr').forEach(row => {
         const img = row.querySelector('td:nth-child(2) img');
         const canvas = row.querySelector('td:nth-child(3) canvas');
         const button = row.querySelector('td:nth-child(4) button');
+        const crossOriginImg = row.querySelector('td:nth-child(5) img');
+        const crossOriginButton = row.querySelector('td:nth-child(6) button');
+
         const ctx = canvas.getContext('2d');
+
+        const convertAndSave = (sourceImg) => {
+          const virtualCanvas = document.createElement('canvas');
+          const virtualCtx = virtualCanvas.getContext('2d');
+          virtualCanvas.width = sourceImg.naturalWidth;
+          virtualCanvas.height = sourceImg.naturalHeight;
+          virtualCtx.drawImage(sourceImg, 0, 0);
+          const pngDataUrl = virtualCanvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.href = pngDataUrl;
+          link.download = `converted-image.png`;
+          link.click();
+        };
 
         img.onload = () => {
           canvas.width = img.naturalWidth;
@@ -178,19 +180,17 @@
           console.error(`Failed to load image: ${img.src}`);
         };
 
-        button.addEventListener('click', () => {
-          const virtualCanvas = document.createElement('canvas');
-          const virtualCtx = virtualCanvas.getContext('2d');
+        button.addEventListener('click', () => convertAndSave(img));
 
-          virtualCanvas.width = img.naturalWidth;
-          virtualCanvas.height = img.naturalHeight;
-          virtualCtx.drawImage(img, 0, 0);
-
-          const pngDataUrl = virtualCanvas.toDataURL('image/png');
-          const link = document.createElement('a');
-          link.href = pngDataUrl;
-          link.download = `converted-image.png`;
-          link.click();
+        crossOriginButton.addEventListener('click', () => {
+          if (crossOriginImg.complete) {
+            convertAndSave(crossOriginImg);
+          } else {
+            crossOriginImg.onload = () => convertAndSave(crossOriginImg);
+            crossOriginImg.onerror = () => {
+              console.error(`Failed to load cross-origin image: ${crossOriginImg.src}`);
+            };
+          }
         });
       });
     });
