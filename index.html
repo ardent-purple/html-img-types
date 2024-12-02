@@ -3,82 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Format Display</title>
+  <title>Image Format Showcase</title>
   <style>
     body {
+      background-color: #121212;
+      color: #ffffff;
       font-family: Arial, sans-serif;
-      margin: 20px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
     }
-    .image-container {
-      margin-bottom: 30px;
-    }
-    .image-container img {
-      max-width: 300px;
-      max-height: 200px;
-      display: block;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
+
+    header {
       text-align: center;
+      padding: 20px 0;
+      background-color: #1e1e1e;
+      border-bottom: 1px solid #333;
     }
-    h2 {
-      margin-bottom: 5px;
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #f05454;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #1e1e1e;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #f05454;
+      font-size: 1.5rem;
+    }
+
+    section img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+      border: 1px solid #444;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #1e1e1e;
+      border-top: 1px solid #333;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    a {
+      color: #f05454;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Image Format Display</h1>
-
-  <!-- WebP -->
-  <div class="image-container">
-    <h2>WebP (Web Picture Format)</h2>
-    <p>Excellent choice for both images and animated images.</p>
-    <img src="images/image.webp" alt="Sample WebP Image">
-  </div>
-  
-  <!-- AVIF -->
-  <div class="image-container">
-    <h2>AVIF (AV1 Image File Format)</h2>
-    <p>Good choice for both images and animated images due to high performance.</p>
-    <img src="images/image.avif" alt="Sample AVIF Image">
-  </div>
-
-  <!-- JPEG -->
-  <div class="image-container">
-    <h2>JPEG (Joint Photographic Expert Group image)</h2>
-    <p>Good choice for lossy compression of still images (currently the most popular).</p>
-    <img src="images/image.jpg" alt="Sample JPEG Image">
-  </div>
-
-  <!-- PNG -->
-  <div class="image-container">
-    <h2>PNG (Portable Network Graphics)</h2>
-    <p>Good choice for lossless compression of still images (slightly better quality than JPEG).</p>
-    <img src="images/image.png" alt="Sample PNG Image">
-  </div>
-
-  <!-- SVG -->
-  <div class="image-container">
-    <h2>SVG (Scalable Vector Graphics)</h2>
-    <p>Vector image format. Use for images that must be drawn accurately at different sizes.</p>
-    <img src="images/image.svg" alt="Sample SVG Image">
-  </div>
-
-  <!-- APNG -->
-  <div class="image-container">
-    <h2>APNG (Animated Portable Network Graphics)</h2>
-    <p>Good choice for lossless animation sequences (GIF is less performant).</p>
-    <img src="images/image.apng" alt="Sample APNG Image">
-  </div>
-
-  <!-- GIF -->
-  <div class="image-container">
-    <h2>GIF (Graphics Interchange Format)</h2>
-    <p>Good choice for simple images and animations.</p>
-    <img src="images/image.gif" alt="Sample GIF Image">
-  </div>
-
+  <header>
+    <h1>Image Format Showcase</h1>
+  </header>
+  <main>
+    <section>
+      <h2>AVIF (AV1 Image File Format)</h2>
+      <p>A high-performance format for still and animated images.</p>
+      <img src="sample-avif.avif" alt="Example AVIF image">
+    </section>
+    <section>
+      <h2>JPEG (Joint Photographic Experts Group)</h2>
+      <p>A widely used format for lossy compression of images.</p>
+      <img src="sample-jpeg.jpg" alt="Example JPEG image">
+    </section>
+    <section>
+      <h2>PNG (Portable Network Graphics)</h2>
+      <p>A popular choice for lossless image compression.</p>
+      <img src="sample-png.png" alt="Example PNG image">
+    </section>
+    <section>
+      <h2>WebP (Web Picture format)</h2>
+      <p>An excellent option for both still and animated images.</p>
+      <img src="sample-webp.webp" alt="Example WebP image">
+    </section>
+    <section>
+      <h2>SVG (Scalable Vector Graphics)</h2>
+      <p>Perfect for sharp vector images at any scale.</p>
+      <img src="sample-svg.svg" alt="Example SVG image">
+    </section>
+    <section>
+      <h2>APNG (Animated Portable Network Graphics)</h2>
+      <p>A great format for animated images with lossless quality.</p>
+      <img src="sample-apng.apng" alt="Example APNG image">
+    </section>
+    <section>
+      <h2>GIF (Graphics Interchange Format)</h2>
+      <p>A classic choice for simple animations and still images.</p>
+      <img src="sample-gif.gif" alt="Example GIF image">
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Image Format Showcase. All rights reserved.</p>
+  </footer>
 </body>
 </html>
