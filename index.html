@@ -39,6 +39,10 @@
       border-radius: 8px;
       background-color: #1e1e1e;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     section h2 {
@@ -47,11 +51,9 @@
       font-size: 1.5rem;
     }
 
-    section img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 10px 0;
+    section img,
+    section canvas {
+      max-width: 48%;
       border: 1px solid #444;
       border-radius: 8px;
     }
@@ -88,40 +90,71 @@
       <h2>WebP (Web Picture format)</h2>
       <p>An excellent option for both still and animated images.</p>
       <img src="images/image.webp" alt="Example WebP image">
+      <canvas></canvas>
     </section>
     <section>
       <h2>AVIF (AV1 Image File Format)</h2>
       <p>A high-performance format for still and animated images.</p>
       <img src="images/image.avif" alt="Example AVIF image">
+      <canvas></canvas>
     </section>
     <section>
       <h2>JPEG (Joint Photographic Experts Group)</h2>
       <p>A widely used format for lossy compression of images.</p>
       <img src="images/image.jpg" alt="Example JPEG image">
+      <canvas></canvas>
     </section>
     <section>
       <h2>PNG (Portable Network Graphics)</h2>
       <p>A popular choice for lossless image compression.</p>
       <img src="images/image.png" alt="Example PNG image">
+      <canvas></canvas>
     </section>
     <section>
       <h2>SVG (Scalable Vector Graphics)</h2>
       <p>Perfect for sharp vector images at any scale.</p>
       <img src="images/image.svg" alt="Example SVG image">
+      <canvas></canvas>
     </section>
     <section>
       <h2>APNG (Animated Portable Network Graphics)</h2>
       <p>A great format for animated images with lossless quality.</p>
       <img src="images/image.apng" alt="Example APNG image">
+      <canvas></canvas>
     </section>
     <section>
       <h2>GIF (Graphics Interchange Format)</h2>
       <p>A classic choice for simple animations and still images.</p>
       <img src="images/image.gif" alt="Example GIF image">
+      <canvas></canvas>
     </section>
   </main>
   <footer>
     <p>&copy; 2024 Image Format Showcase. All rights reserved.</p>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('section').forEach(section => {
+        const img = section.querySelector('img');
+        const canvas = section.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        img.onload = () => {
+          // Set canvas dimensions to match the image
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          // Draw the image onto the canvas
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+
+        img.onerror = () => {
+          console.error(`Failed to load image: ${img.src}`);
+          ctx.fillStyle = '#ff0000';
+          ctx.font = '16px Arial';
+          ctx.fillText('Failed to load image', 10, 30);
+        };
+      });
+    });
+  </script>
 </body>
 </html>
