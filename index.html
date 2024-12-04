@@ -154,9 +154,9 @@
         const button = row.querySelector('td:nth-child(4) button');
         const crossOriginImg = row.querySelector('td:nth-child(5) img');
         const crossOriginButton = row.querySelector('td:nth-child(6) button');
-
+    
         const ctx = canvas.getContext('2d');
-
+    
         const convertAndSave = (sourceImg) => {
           const virtualCanvas = document.createElement('canvas');
           const virtualCtx = virtualCanvas.getContext('2d');
@@ -169,27 +169,47 @@
           link.download = `converted-image.png`;
           link.click();
         };
-
+    
+        const convertAndSaveCrossOrigin = (sourceUrl) => {
+          const tempImg = new Image();
+          tempImg.crossOrigin = 'anonymous';
+          tempImg.src = sourceUrl;
+    
+          tempImg.onload = () => {
+            const virtualCanvas = document.createElement('canvas');
+            const virtualCtx = virtualCanvas.getContext('2d');
+            virtualCanvas.width = tempImg.naturalWidth;
+            virtualCanvas.height = tempImg.naturalHeight;
+            virtualCtx.drawImage(tempImg, 0, 0);
+            const pngDataUrl = virtualCanvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = pngDataUrl;
+            link.download = `converted-crossorigin-image.png`;
+            link.click();
+          };
+    
+          tempImg.onerror = () => {
+            console.error(`Failed to load cross-origin image for conversion: ${sourceUrl}`);
+          };
+        };
+    
         img.onload = () => {
           canvas.width = img.naturalWidth;
           canvas.height = img.naturalHeight;
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         };
-
+    
         img.onerror = () => {
           console.error(`Failed to load image: ${img.src}`);
         };
-
+    
         button.addEventListener('click', () => convertAndSave(img));
-
+    
         crossOriginButton.addEventListener('click', () => {
-          if (crossOriginImg.complete) {
-            convertAndSave(crossOriginImg);
+          if (crossOriginImg.src) {
+            convertAndSaveCrossOrigin(crossOriginImg.src);
           } else {
-            crossOriginImg.onload = () => convertAndSave(crossOriginImg);
-            crossOriginImg.onerror = () => {
-              console.error(`Failed to load cross-origin image: ${crossOriginImg.src}`);
-            };
+            console.error(`Cross-origin image source is not valid.`);
           }
         });
       });
