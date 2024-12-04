@@ -188,8 +188,9 @@
             link.click();
           };
     
-          tempImg.onerror = () => {
+          tempImg.onerror = (event) => {
             console.error(`Failed to load cross-origin image for conversion: ${sourceUrl}`);
+            console.log(event)
           };
         };
     
@@ -199,8 +200,9 @@
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         };
     
-        img.onerror = () => {
+        img.onerror = (event) => {
           console.error(`Failed to load image: ${img.src}`);
+          console.log(event)
         };
     
         button.addEventListener('click', () => convertAndSave(img));
